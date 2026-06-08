@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark" data-lang="latn">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kunlik.uz — Har kungi yordamchi</title>
+<meta name="description" content="Kunlik.uz — O'zbekiston uchun kunlik yordamchi: ob-havo, namoz vaqtlari, valyuta kurslari va foydali vositalar."/>
+<meta name="keywords" content="kunlik.uz, ob-havo, namoz vaqtlari, valyuta kursi, Uzbekistan, O'zbekiston"/>
+<meta name="author" content="M. Erkinov"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://kunlik.uz/"/>
+<meta property="og:title" content="Kunlik.uz — Har kungi yordamchi"/>
+<meta property="og:description" content="O'zbekiston uchun ob-havo, namoz vaqtlari, valyuta kurslari va foydali vositalar — barchasi bir joyda."/>
+<meta property="og:image" content="https://kunlik.uz/og-image.png"/>
+<meta property="og:locale" content="uz_UZ"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kunlik.uz — Har kungi yordamchi"/>
+<meta name="twitter:description" content="Ob-havo, namoz vaqtlari, valyuta — O'zbekiston uchun kunlik yordamchi."/>
+<meta name="twitter:image" content="https://kunlik.uz/og-image.png"/>
+<link rel="canonical" href="https://kunlik.uz/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+<!-- LANG MODAL -->
+<div id="langModal" class="lang-modal">
+  <div class="lang-modal-bg"></div>
+  <div class="lang-modal-card">
+    <div class="lang-logo">Kunlik<span>.uz</span></div>
+    <p class="lang-sub">Tilni tanlang / Тилни танланг</p>
+    <div class="lang-options">
+      <button class="lang-btn" onclick="setLang('latn')">
+        <span class="lang-flag">🇺🇿</span>
+        <div><div class="lang-name">O'zbek</div><div class="lang-script">Lotin yozuvi</div></div>
+      </button>
+      <button class="lang-btn" onclick="setLang('kril')">
+        <span class="lang-flag">🇺🇿</span>
+        <div><div class="lang-name">Ўзбек</div><div class="lang-script">Кирилл ёзуви</div></div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">Kunlik<span>.uz</span></a>
+    <nav class="nav" id="mainNav">
+      <button class="nav-btn active" data-section="weather" onclick="showSection('weather',this)">
+        <span class="nav-icon"><?xml version="1.0"?><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+        <span data-latn="Ob-havo" data-kril="Об-ҳаво">Ob-havo</span>
+      </button>
+      <button class="nav-btn" data-section="prayer" onclick="showSection('prayer',this)">
+        <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a7 7 0 1 0 6.5 9.5A5.5 5.5 0 1 1 12 3z" fill="currentColor" stroke="none"/><path d="M17 4l.6 1.4L19 6l-1.4.6L17 8l-.6-1.4L15 6l1.4-.6z" fill="currentColor" stroke="none"/></svg></span>
+        <span data-latn="Namoz" data-kril="Намоз">Namoz</span>
+      </button>
+      <button class="nav-btn" data-section="currency" onclick="showSection('currency',this)">
+        <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-4-6h8M8.5 9.5C8.5 8 10 7 12 7s3.5 1 3.5 2.5-1.5 2-3.5 2-3.5.5-3.5 2S10 17 12 17s3.5-1 3.5-2.5"/></svg></span>
+        <span data-latn="Valyuta" data-kril="Валюта">Valyuta</span>
+      </button>
+      <button class="nav-btn" data-section="tools" onclick="showSection('tools',this)">
+        <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+        <span data-latn="Vositalar" data-kril="Воситалар">Vositalar</span>
+      </button>
+      <button class="nav-btn" data-section="contact" onclick="showSection('contact',this)">
+        <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.48 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span data-latn="Aloqa" data-kril="Алоқа">Aloqa</span>
+      </button>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" title="Tema">
+        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" onclick="openLangModal()" title="Til">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE BOTTOM TAB BAR — outside header, always fixed at bottom -->
+<nav class="mobile-nav" id="mobileNav"></nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- ===== WEATHER SECTION ===== -->
+  <section class="section active" id="section-weather">
+    <div class="container">
+
+      <!-- City Tabs -->
+      <div class="city-tabs-wrap">
+        <div class="city-tabs" id="cityTabs"></div>
+      </div>
+
+      <!-- Current Weather -->
+      <div class="weather-hero glass-card" id="weatherMain">
+        <div class="loading-box"><div class="spinner"></div></div>
+      </div>
+
+      <!-- 7-day Forecast -->
+      <div class="forecast-grid" id="forecastGrid"></div>
+
+      <!-- All Regions -->
+      <div class="regions-header">
+        <h3 class="sub-title" data-latn="Barcha viloyatlar harorati" data-kril="Барча вилоятлар ҳарорати">Barcha viloyatlar harorati</h3>
+      </div>
+      <div class="regions-grid" id="regionsGrid">
+        <div class="loading-box"><div class="spinner"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PRAYER SECTION ===== -->
+  <section class="section" id="section-prayer">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-latn="Namoz vaqtlari" data-kril="Намоз вақтлари">Namoz vaqtlari</h2>
+        <p class="section-desc" data-latn="Bugungi namoz vaqtlari" data-kril="Бугунги намоз вақтлари">Bugungi namoz vaqtlari</p>
+      </div>
+      <div class="prayer-city-row">
+        <select id="prayerCitySelect" class="glass-select"></select>
+      </div>
+      <div class="prayer-grid" id="prayerGrid">
+        <div class="loading-box" style="grid-column:1/-1"><div class="spinner"></div></div>
+      </div>
+      <div class="next-prayer glass-card" id="nextPrayer"></div>
+    </div>
+  </section>
+
+  <!-- ===== CURRENCY SECTION ===== -->
+  <section class="section" id="section-currency">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-latn="Valyuta kurslari" data-kril="Валюта курслари">Valyuta kurslari</h2>
+        <p class="section-desc" data-latn="Markaziy bank rasmiy kursi" data-kril="Марказий банк расмий курси">Markaziy bank rasmiy kursi</p>
+      </div>
+      <div class="currency-grid" id="currencyGrid">
+        <div class="loading-box" style="grid-column:1/-1"><div class="spinner"></div></div>
+      </div>
+      <div class="currency-converter glass-card">
+        <h3 class="card-title" data-latn="Valyuta konvertori" data-kril="Валюта конвертори">Valyuta konvertori</h3>
+        <div class="converter-row">
+          <input type="number" id="convAmount" class="glass-input" value="1"/>
+          <select id="convFrom" class="glass-select"></select>
+          <button class="swap-btn" onclick="swapCurrency()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+          </button>
+          <select id="convTo" class="glass-select"></select>
+        </div>
+        <div class="conv-result" id="convResult">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOLS SECTION ===== -->
+  <section class="section" id="section-tools">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-latn="Foydali vositalar" data-kril="Фойдали воситалар">Foydali vositalar</h2>
+      </div>
+      <div class="tools-grid">
+
+        <!-- Pomodoro -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Pomodoro taymer" data-kril="Помодоро таймер">Pomodoro taymer</h3>
+          </div>
+          <div class="pomodoro-ring-wrap">
+            <svg class="pom-ring" viewBox="0 0 100 100">
+              <circle class="pom-track" cx="50" cy="50" r="42"/>
+              <circle class="pom-progress" id="pomRingCircle" cx="50" cy="50" r="42"/>
+            </svg>
+            <div class="pom-center">
+              <div class="pom-time" id="pomTime">25:00</div>
+              <div class="pom-label" id="pomLabel">Ishlash</div>
+            </div>
+          </div>
+          <div class="pom-sessions" id="pomSessions"></div>
+          <div class="pom-btns">
+            <button class="tool-btn" onclick="pomStart()" id="pomStartBtn" data-latn="Boshlash" data-kril="Бошлаш">Boshlash</button>
+            <button class="tool-btn-ghost" onclick="pomReset()" data-latn="Qayta" data-kril="Қайта">Qayta</button>
+          </div>
+        </div>
+
+        <!-- Age Calculator -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Yosh hisoblagich" data-kril="Ёш ҳисобловчи">Yosh hisoblagich</h3>
+          </div>
+          <div class="tool-body">
+            <label class="input-label" data-latn="Tug'ilgan sana" data-kril="Туғилган сана">Tug'ilgan sana</label>
+            <input type="date" id="ageInput" class="glass-input"/>
+            <button class="tool-btn" onclick="calcAge()" data-latn="Hisoblash" data-kril="Ҳисоблаш">Hisoblash</button>
+            <div class="tool-result" id="ageResult"></div>
+          </div>
+        </div>
+
+        <!-- Percent -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Foiz hisoblagich" data-kril="Фоиз ҳисобловчи">Foiz hisoblagich</h3>
+          </div>
+          <div class="tool-body">
+            <input type="number" id="pctNum" class="glass-input" placeholder="Son"/>
+            <input type="number" id="pctOf" class="glass-input" placeholder="Foiz (%)"/>
+            <button class="tool-btn" onclick="calcPercent()" data-latn="Hisoblash" data-kril="Ҳисоблаш">Hisoblash</button>
+            <div class="tool-result" id="pctResult"></div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap red">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Parol generator" data-kril="Парол генератор">Parol generator</h3>
+          </div>
+          <div class="tool-body">
+            <div class="range-row">
+              <input type="range" id="passLen" min="6" max="32" value="16" class="glass-range" oninput="document.getElementById('passLenVal').textContent=this.value"/>
+              <span id="passLenVal" class="range-val">16</span>
+            </div>
+            <div class="check-row">
+              <label class="check-label"><input type="checkbox" id="passUpper" checked/> A-Z</label>
+              <label class="check-label"><input type="checkbox" id="passNum" checked/> 0-9</label>
+              <label class="check-label"><input type="checkbox" id="passSym" checked/> !@#</label>
+            </div>
+            <button class="tool-btn" onclick="genPass()" data-latn="Yaratish" data-kril="Яратиш">Yaratish</button>
+            <div class="pass-result" id="passResult" onclick="copyPass()"></div>
+          </div>
+        </div>
+
+        <!-- Text Counter -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap cyan">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Matn hisoblagich" data-kril="Матн ҳисобловчи">Matn hisoblagich</h3>
+          </div>
+          <div class="tool-body">
+            <textarea id="textInput" class="glass-textarea" rows="4" placeholder="Matn kiriting..." oninput="countText()"></textarea>
+            <div class="text-stats" id="textStats">
+              <span class="stat-chip">0 harf</span>
+              <span class="stat-chip">0 so'z</span>
+              <span class="stat-chip">0 qator</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unit Converter -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="O'lchov o'zgartiruvchi" data-kril="Ўлчов ўзгартирувчи">O'lchov o'zgartiruvchi</h3>
+          </div>
+          <div class="tool-body">
+            <select id="unitType" class="glass-select" onchange="updateUnitOptions()">
+              <option value="length">Uzunlik</option>
+              <option value="weight">Og'irlik</option>
+              <option value="temp">Harorat</option>
+              <option value="area">Yuza</option>
+            </select>
+            <div class="unit-row">
+              <input type="number" id="unitVal" class="glass-input" placeholder="Qiymat" oninput="convertUnit()"/>
+              <select id="unitFrom" class="glass-select" onchange="convertUnit()"></select>
+            </div>
+            <div class="unit-row">
+              <span class="unit-arrow">↓</span>
+              <select id="unitTo" class="glass-select" onchange="convertUnit()"></select>
+            </div>
+            <div class="tool-result" id="unitResult"></div>
+          </div>
+        </div>
+
+        <!-- Color Converter -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap pink">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Rang konvertori" data-kril="Ранг конвертори">Rang konvertori</h3>
+          </div>
+          <div class="tool-body">
+            <div class="color-pick-row">
+              <input type="color" id="colorPicker" value="#6366f1" class="color-picker" oninput="convertColor()"/>
+              <div class="color-preview" id="colorPreview"></div>
+            </div>
+            <div class="color-outputs" id="colorOutputs"></div>
+          </div>
+        </div>
+
+        <!-- Random Picker -->
+        <div class="tool-card glass-card tilt-card">
+          <div class="tool-header">
+            <div class="tool-icon-wrap gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+            </div>
+            <h3 class="tool-title" data-latn="Tasodifiy tanlov" data-kril="Тасодифий танлов">Tasodifiy tanlov</h3>
+          </div>
+          <div class="tool-body">
+            <textarea id="randomList" class="glass-textarea" rows="3" placeholder="Variantlarni qatorma-qator kiriting..."></textarea>
+            <button class="tool-btn" onclick="randomPick()" data-latn="Tanlash" data-kril="Танлаш">Tanlash</button>
+            <div class="random-result" id="randomResult"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section" id="section-contact">
+    <div class="container contact-container">
+      <div class="section-header">
+        <h2 class="section-title" data-latn="Bog'laning" data-kril="Боғланинг">Bog'laning</h2>
+        <p class="section-desc" data-latn="Taklif yoki muammo bo'lsa murojaat qiling" data-kril="Таклиф ёки муаммо бўлса мурожаат қилинг">Taklif yoki muammo bo'lsa murojaat qiling</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-links">
+          <a href="https://t.me/ErkinovTOP" target="_blank" class="contact-card glass-card">
+            <div class="contact-icon-wrap tg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.9l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.834.943z"/></svg>
+            </div>
+            <div>
+              <div class="contact-platform">Telegram</div>
+              <div class="contact-handle">@ErkinovTOP</div>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://youtube.com/@ErkinovPrime" target="_blank" class="contact-card glass-card">
+            <div class="contact-icon-wrap yt">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div>
+              <div class="contact-platform">YouTube</div>
+              <div class="contact-handle">@ErkinovPrime</div>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://instagram.com/erkinov_cs" target="_blank" class="contact-card glass-card">
+            <div class="contact-icon-wrap ig">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </div>
+            <div>
+              <div class="contact-platform">Instagram</div>
+              <div class="contact-handle">@erkinov_cs</div>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="contact-form glass-card">
+          <h3 class="card-title" data-latn="Tezkor murojaat" data-kril="Тезкор мурожаат">Tezkor murojaat</h3>
+          <input type="text" id="contactName" class="glass-input" placeholder="Ismingiz"/>
+          <textarea id="contactMsg" class="glass-textarea" rows="5" placeholder="Xabaringiz..."></textarea>
+          <button class="tool-btn" onclick="sendTelegram()" data-latn="Telegram orqali yuborish" data-kril="Телеграм орқали юбориш">Telegram orqali yuborish</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Kunlik<span>.uz</span></div>
+      <p class="footer-copy">© 2025 Kunlik.uz — M. Erkinov tomonidan yaratilgan</p>
+      <div class="footer-links">
+        <a href="https://t.me/ErkinovTOP" target="_blank">Telegram</a>
+        <a href="https://youtube.com/@ErkinovPrime" target="_blank">YouTube</a>
+        <a href="https://instagram.com/erkinov_cs" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/prayer.js"></script>
+<script src="js/currency.js"></script>
+<script src="js/tools.js"></script>
+</body>
+</html>

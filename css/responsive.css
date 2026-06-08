@@ -1,0 +1,128 @@
+/* KUNLIK.UZ — responsive.css */
+
+/* ===== TABLET ===== */
+@media(max-width:1024px){
+  .forecast-grid{grid-template-columns:repeat(4,1fr)}
+  .prayer-grid{grid-template-columns:repeat(3,1fr)}
+  .contact-layout{grid-template-columns:1fr}
+  .weather-layout{grid-template-columns:1fr;text-align:center}
+  .w-stats{max-width:360px;margin:0 auto}
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  /* --- HEADER: logo left, actions right, no nav --- */
+  .nav{display:none !important}
+  .header-inner{justify-content:space-between}
+  .header-actions{margin-left:auto;gap:8px;flex-shrink:0}
+  .icon-btn{width:36px;height:36px}
+
+  /* --- MOBILE BOTTOM TAB BAR ---
+     This element is <nav id="mobileNav"> directly inside <body>,
+     completely independent from <header>. Never moves on scroll. */
+  .mobile-nav{
+    display:flex !important;
+    flex-direction:row !important;
+    position:fixed !important;
+    bottom:0 !important;
+    top:auto !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    height:60px !important;
+    padding:0 !important;
+    gap:0 !important;
+    z-index:999999 !important;
+    background:rgba(5,5,8,0.96) !important;
+    backdrop-filter:blur(24px) !important;
+    -webkit-backdrop-filter:blur(24px) !important;
+    border-top:1px solid rgba(255,255,255,0.09) !important;
+    border-bottom:none !important;
+    align-items:stretch !important;
+    transform:translateZ(0) !important;
+    will-change:unset !important;
+    transition:none !important;
+  }
+  [data-theme="light"] .mobile-nav{
+    background:rgba(244,246,251,0.97) !important;
+    border-top:1px solid rgba(0,0,0,0.08) !important;
+  }
+  .mobile-nav .nav-btn{
+    flex:1 1 0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:3px !important;
+    padding:6px 2px !important;
+    font-size:0.56rem !important;
+    font-weight:700 !important;
+    letter-spacing:0.01em !important;
+    border-radius:0 !important;
+    border:none !important;
+    background:transparent !important;
+    color:var(--text3) !important;
+    height:100% !important;
+    min-width:0 !important;
+    cursor:pointer !important;
+    transition:color .2s,background .2s !important;
+  }
+  .mobile-nav .nav-btn .nav-icon{
+    opacity:.65;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-nav .nav-btn .nav-icon svg{width:20px;height:20px}
+  .mobile-nav .nav-btn span:not(.nav-icon){
+    font-size:.56rem;line-height:1;
+  }
+  .mobile-nav .nav-btn.active{
+    color:var(--accent3) !important;
+    background:rgba(99,102,241,0.1) !important;
+    border-top:2px solid var(--accent) !important;
+  }
+  .mobile-nav .nav-btn.active .nav-icon{opacity:1}
+
+  /* --- CONTENT SPACING --- */
+  .main{padding-top:60px;padding-bottom:72px}
+  .section{padding:20px 0 16px}
+  .footer{margin-bottom:60px}
+
+  /* --- LAYOUT --- */
+  .forecast-grid{
+    display:flex;overflow-x:auto;gap:8px;
+    padding-bottom:8px;scrollbar-width:none;margin-bottom:20px;
+  }
+  .forecast-grid::-webkit-scrollbar{display:none}
+  .forecast-card{flex-shrink:0;min-width:78px}
+  .prayer-grid{grid-template-columns:repeat(2,1fr)}
+  .currency-grid{grid-template-columns:repeat(2,1fr)}
+  .converter-row{flex-direction:column}
+  .converter-row .glass-input,.converter-row .glass-select{width:100%}
+  .regions-grid{grid-template-columns:repeat(3,1fr)}
+  .tools-grid{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr;gap:16px}
+  .glass-select{color:var(--text);background-color:var(--bg2)}
+  option{background:var(--bg2);color:var(--text)}
+}
+
+@media(max-width:480px){
+  .regions-grid{grid-template-columns:repeat(2,1fr)}
+  .prayer-grid{grid-template-columns:repeat(2,1fr)}
+  .currency-grid{grid-template-columns:1fr 1fr}
+  .forecast-grid{grid-template-columns:unset}
+  .w-temp{font-size:3rem}
+  .glass-card{padding:16px}
+  .lang-modal-card{width:90%;padding:32px 20px;min-width:unset}
+}
+
+@media(max-width:360px){
+  .currency-grid,.regions-grid{grid-template-columns:1fr}
+  .check-row{flex-direction:column;gap:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
