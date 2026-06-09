@@ -101,6 +101,23 @@ document.getElementById('themeToggle').addEventListener('click',()=>{
   initTheme();
 });
 
+// ===== REGIONS TOGGLE =====
+let regionsOpen = false;
+function toggleRegions(){
+  regionsOpen = !regionsOpen;
+  const grid = document.getElementById('regionsGrid');
+  const btn  = document.getElementById('regionsToggleBtn');
+  const arrow = btn.querySelector('.regions-toggle-arrow');
+  if(regionsOpen){
+    grid.classList.remove('regions-grid-collapse');
+    arrow.style.transform = 'rotate(180deg)';
+    btn.classList.add('active');
+  } else {
+    grid.classList.add('regions-grid-collapse');
+    arrow.style.transform = '';
+    btn.classList.remove('active');
+  }
+}
 // ===== BURGER — removed =====
 
 // Build mobile nav clone

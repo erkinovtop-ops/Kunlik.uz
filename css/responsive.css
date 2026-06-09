@@ -126,3 +126,11 @@
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* ===== CONTACT MOBILE ===== */
+@media(max-width:768px){
+  .contact-cta-inner{flex-direction:column;align-items:flex-start;gap:16px}
+  .contact-cta-btn{width:100%;justify-content:center}
+  .contact-social-card{padding:14px 16px}
+  .csoc-icon{width:44px;height:44px;border-radius:12px}
+}

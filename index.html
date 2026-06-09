@@ -111,9 +111,12 @@
 
       <!-- All Regions -->
       <div class="regions-header">
-        <h3 class="sub-title" data-latn="Barcha viloyatlar harorati" data-kril="Барча вилоятлар ҳарорати">Barcha viloyatlar harorati</h3>
+        <button class="regions-toggle-btn" id="regionsToggleBtn" onclick="toggleRegions()" data-latn="🌡 Barcha viloyatlar harorati" data-kril="🌡 Барча вилоятлар ҳарорати">
+          <span>🌡 Barcha viloyatlar harorati</span>
+          <svg class="regions-toggle-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
-      <div class="regions-grid" id="regionsGrid">
+      <div class="regions-grid regions-grid-collapse" id="regionsGrid">
         <div class="loading-box"><div class="spinner"></div></div>
       </div>
 
@@ -336,7 +339,7 @@
     <div class="container contact-container">
       <div class="section-header">
         <h2 class="section-title" data-latn="Bog'laning" data-kril="Боғланинг">Bog'laning</h2>
-        <p class="section-desc" data-latn="Taklif yoki muammo bo'lsa murojaat qiling" data-kril="Таклиф ёки муаммо бўлса мурожаат қилинг">Taklif yoki muammo bo'lsa murojaat qiling</p>
+        <p class="section-desc" data-latn="Fikr, taklif yoki g'oya bo'lsa — Telegram orqali muloqot qilishdan mamnunmiz. Har bir xabar e'tiborga olinadi." data-kril="Фикр, таклиф ёки ғоя бўлса — Телеграм орқали мулоқот қилишдан мамнунмиз. Ҳар бир хабар эътиборга олинади.">Fikr, taklif yoki g'oya bo'lsa — Telegram orqali muloqot qilishdan mamnunmiz. Har bir xabar e'tiborga olinadi.</p>
       </div>
       <div class="contact-layout">
         <div class="contact-links">
