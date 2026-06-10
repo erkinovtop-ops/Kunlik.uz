@@ -1,4 +1,4 @@
-/* KUNLIK.UZ — currency.js */
+/* BUGUN.UZ — currency.js */
 const CURR=[
   {code:'USD',flag:'🇺🇸',latn:'Dollar',kril:'Доллар'},
   {code:'EUR',flag:'🇪🇺',latn:'Yevro',kril:'Евро'},
@@ -13,15 +13,31 @@ const CURR=[
 ];
 let rates={};
 async function loadCurrency(){
+  // Try primary CBU API, fallback to alternative endpoint
+  const URLS=[
+    'https://cbu.uz/oz/arkhiv-kursov-valyut/json/',
+    'https://cbu.uz/ru/arkhiv-kursov-valyut/json/',
+    'https://cbu.uz/en/arkhiv-kursov-valyut/json/'
+  ];
+  let data=null;
+  for(const url of URLS){
+    try{
+      const r=await fetch(url,{cache:'no-cache'});
+      if(!r.ok)continue;
+      data=await r.json();
+      if(Array.isArray(data)&&data.length)break;
+    }catch(e){continue;}
+  }
+  if(!data||!data.length){
+    document.getElementById('currencyGrid').innerHTML='<div class="error-msg" style="grid-column:1/-1">⚠️ Valyuta kurslari yuklanmadi. Internet aloqasini tekshiring.</div>';
+    return;
+  }
   try{
-    const r=await fetch('https://cbu.uz/oz/arkhiv-kursov-valyut/json/');
-    if(!r.ok)throw new Error();
-    const data=await r.json();
-    data.forEach(x=>{rates[x.Ccy]=parseFloat(x.Rate)/parseFloat(x.Nominal);});
+    data.forEach(x=>{rates[x.Ccy]=parseFloat(x.Rate)/parseFloat(x.Nominal||1);});
     renderCards();
     fillSelects(data);
   }catch(e){
-    document.getElementById('currencyGrid').innerHTML='<div class="error-msg" style="grid-column:1/-1">⚠️ Yuklanmadi</div>';
+    document.getElementById('currencyGrid').innerHTML='<div class="error-msg" style="grid-column:1/-1">⚠️ Ma\'lumotlarni qayta ishlashda xatolik</div>';
   }
 }
 

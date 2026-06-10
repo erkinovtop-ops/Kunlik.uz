@@ -1,4 +1,4 @@
-/* KUNLIK.UZ — main.js */
+/* BUGUN.UZ — main.js */
 
 // ===== LANGUAGE =====
 const TR = {
@@ -22,13 +22,13 @@ const TR = {
   }
 };
 
-let currentLang = localStorage.getItem('kunlik_lang') || null;
+let currentLang = localStorage.getItem('bugun_lang') || null;
 window.currentLang = currentLang;
 
 function setLang(lang){
   currentLang=lang;
   window.currentLang=lang;
-  localStorage.setItem('kunlik_lang',lang);
+  localStorage.setItem('bugun_lang',lang);
   document.documentElement.setAttribute('data-lang',lang);
   document.getElementById('langModal').style.display='none';
   applyLang();
@@ -65,7 +65,7 @@ function applyLang(){
   });
 }
 function t(k){const l=window.currentLang||'latn';return (TR[l]&&TR[l][k]!==undefined)?TR[l][k]:k}
-function getLang(){return window.currentLang||localStorage.getItem('kunlik_lang')||'latn'}
+function getLang(){return window.currentLang||localStorage.getItem('bugun_lang')||'latn'}
 
 // ===== SECTION NAVIGATION =====
 function showSection(name, btn){
@@ -83,7 +83,7 @@ function showSection(name, btn){
 }
 
 // ===== THEME =====
-let theme=localStorage.getItem('kunlik_theme')||'dark';
+let theme=localStorage.getItem('bugun_theme')||'dark';
 function initTheme(){
   document.documentElement.setAttribute('data-theme',theme);
   const icon=document.getElementById('themeIcon');
@@ -97,7 +97,7 @@ function initTheme(){
 }
 document.getElementById('themeToggle').addEventListener('click',()=>{
   theme=theme==='dark'?'light':'dark';
-  localStorage.setItem('kunlik_theme',theme);
+  localStorage.setItem('bugun_theme',theme);
   initTheme();
 });
 
@@ -128,6 +128,7 @@ function buildMobileNav(){
   mn.innerHTML='';
   mainNav.querySelectorAll('.nav-btn').forEach(btn=>{
     const clone=btn.cloneNode(true);
+    clone.removeAttribute('onclick');
     clone.addEventListener('click',()=>{
       const sec=btn.dataset.section;
       showSection(sec,btn);
@@ -165,7 +166,7 @@ function sendTelegram(){
   const name=document.getElementById('contactName').value.trim();
   const msg=document.getElementById('contactMsg').value.trim();
   if(!name||!msg){showToast('❌ Ism va xabarni kiriting!');return;}
-  const text=encodeURIComponent(`👤 ${name}\n💬 ${msg}\n\n📌 Kunlik.uz`);
+  const text=encodeURIComponent(`👤 ${name}\n💬 ${msg}\n\n📌 Bugun.uz`);
   window.open(`https://t.me/ErkinovTOP?text=${text}`,'_blank');
 }
 

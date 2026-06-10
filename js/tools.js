@@ -1,17 +1,21 @@
-/* KUNLIK.UZ — tools.js */
+/* BUGUN.UZ — tools.js */
 function showToastT(m){if(typeof showToast==='function')showToast(m);}
 
 // ===== POMODORO =====
 let pomSec=25*60,pomMode='work',pomInt=null,pomDone=0;
 const POM={work:25*60,break:5*60,long_break:15*60};
-const POM_R=264; // 2πr where r=42
+const POM_R = Math.round(2 * Math.PI * 42); // circumference for r=42 ≈ 264
 
 function pomDraw(){
   const el=document.getElementById('pomRingCircle');
   const total=POM[pomMode];
   const prog=(total-pomSec)/total;
-  const offset=POM_R-(prog*POM_R);
-  if(el)el.style.strokeDashoffset=offset;
+  const circ=Math.round(2*Math.PI*42);
+  const offset=circ-(prog*circ);
+  if(el){
+    el.style.strokeDasharray=circ;
+    el.style.strokeDashoffset=offset;
+  }
   // Add gradient def if not exists
   const svg=document.querySelector('.pom-ring');
   if(svg&&!document.getElementById('pomGrad')){

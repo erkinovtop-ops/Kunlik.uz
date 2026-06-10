@@ -1,4 +1,4 @@
-/* KUNLIK.UZ — responsive.css */
+/* BUGUN.UZ — responsive.css */
 
 /* ===== TABLET ===== */
 @media(max-width:1024px){
@@ -133,4 +133,231 @@
   .contact-cta-btn{width:100%;justify-content:center}
   .contact-social-card{padding:14px 16px}
   .csoc-icon{width:44px;height:44px;border-radius:12px}
+}
+
+/* ===== MOBILE PRO REDESIGN ===== */
+@media(max-width:768px){
+
+  /* --- HEADER --- */
+  .header{height:56px}
+  .header-inner{height:56px;padding:0 16px}
+  .logo{font-size:1.3rem}
+
+  /* --- SECTION HEADER --- */
+  .section-header{margin-bottom:24px;padding-top:12px}
+  .section-title{font-size:1.6rem;letter-spacing:-.5px}
+  .section-desc{font-size:.85rem}
+
+  /* --- WEATHER HERO --- */
+  .weather-hero{padding:20px 16px;min-height:unset;border-radius:18px}
+  .weather-layout{
+    display:flex;flex-direction:column;
+    align-items:center;gap:16px;text-align:center
+  }
+  .weather-left{display:flex;flex-direction:column;align-items:center}
+  .w-icon{margin-bottom:4px}
+  .w-icon svg,.w-icon>*{width:64px!important;height:64px!important}
+  .w-temp{font-size:3.4rem;letter-spacing:-2px}
+  .w-desc{font-size:.95rem;margin-bottom:4px}
+  .w-feels{font-size:.8rem}
+  .w-city{font-size:1.3rem;font-weight:800;margin-bottom:2px}
+  .w-date{font-size:.78rem}
+  .w-stats{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:8px;width:100%;margin-top:4px
+  }
+  .w-stat{padding:10px 12px;border-radius:12px}
+  .w-stat-label{font-size:.65rem}
+  .w-stat-val{font-size:1rem}
+
+  /* --- CITY TABS --- */
+  .city-tabs-wrap{margin-bottom:14px}
+  .city-tab{
+    padding:7px 14px;font-size:.78rem;
+    border-radius:20px;white-space:nowrap
+  }
+
+  /* --- FORECAST --- */
+  .forecast-grid{gap:8px;margin-bottom:16px;padding:4px 0 8px}
+  .forecast-card{
+    min-width:70px;padding:12px 8px;border-radius:14px;
+    display:flex;flex-direction:column;align-items:center;gap:4px
+  }
+  .fc-day{font-size:.63rem;letter-spacing:.3px}
+  .fc-high{font-size:.88rem}
+  .fc-low{font-size:.75rem}
+  .fc-icon svg,.fc-icon>*{width:28px!important;height:28px!important}
+
+  /* --- REGIONS --- */
+  .regions-header{margin-bottom:12px}
+  .regions-toggle-btn{
+    width:100%;padding:12px 16px;font-size:.85rem;
+    border-radius:14px;display:flex;align-items:center;justify-content:space-between
+  }
+  .region-card{padding:12px;border-radius:14px}
+  .region-temp{font-size:1.4rem}
+  .region-name{font-size:.82rem;font-weight:700}
+  .region-desc{font-size:.7rem}
+  .region-icon svg,.region-icon>*{width:28px!important;height:28px!important}
+
+  /* --- PRAYER --- */
+  .prayer-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .prayer-card{padding:14px 12px;border-radius:16px;text-align:center}
+  .prayer-name{font-size:.72rem;margin-top:6px}
+  .prayer-time{font-size:1.05rem}
+  .prayer-icon svg{width:24px;height:24px}
+  .next-prayer{padding:16px;border-radius:16px;margin-top:4px}
+  .next-prayer h4{font-size:.78rem}
+  .next-prayer-info{font-size:1.1rem}
+  .prayer-city-row{margin-bottom:16px}
+  .prayer-city-row .glass-select{width:100%;font-size:.9rem}
+
+  /* --- CURRENCY --- */
+  .currency-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .currency-card{padding:14px 12px;border-radius:16px;text-align:center}
+  .cc-flag{font-size:1.4rem!important;margin-bottom:4px}
+  .cc-code{font-size:.8rem;font-weight:700}
+  .cc-name{font-size:.68rem}
+  .cc-rate{font-size:1.2rem}
+  .cc-uzs{font-size:.65rem}
+  .currency-converter{padding:18px 16px;border-radius:18px;margin-top:8px}
+  .converter-row{flex-direction:column;gap:10px}
+  .converter-row .glass-input,
+  .converter-row .glass-select{width:100%;font-size:.9rem}
+  .swap-btn{width:100%;justify-content:center;padding:10px}
+  .conv-result{font-size:1.3rem;padding:12px 0 4px}
+
+  /* --- TOOLS --- */
+  .tools-grid{grid-template-columns:1fr;gap:14px}
+  .tool-card{padding:20px 18px;border-radius:18px}
+  .tool-header{gap:12px;margin-bottom:16px}
+  .tool-title{font-size:1rem;font-weight:800}
+  .tool-icon-wrap{width:40px;height:40px;border-radius:10px}
+  .tool-body{gap:10px}
+
+  /* Pomodoro */
+  .pomodoro-ring-wrap{width:160px;height:160px;margin-bottom:14px}
+  .pom-time{font-size:2.2rem}
+  .pom-label{font-size:.8rem}
+  .pom-btns{gap:10px}
+  .pom-btns .tool-btn{flex:1}
+  .pom-btns .tool-btn-ghost{flex:0 0 auto;padding:10px 16px}
+
+  /* Inputs */
+  .glass-input{font-size:.92rem;padding:11px 14px;border-radius:12px}
+  .glass-select{font-size:.92rem;padding:11px 14px;border-radius:12px}
+  .glass-textarea{font-size:.92rem;padding:11px 14px;border-radius:12px}
+  .tool-btn{font-size:.9rem;padding:11px;border-radius:12px;font-weight:700}
+  .tool-btn-ghost{font-size:.9rem;padding:11px 14px;border-radius:12px}
+  .tool-result{font-size:.95rem;padding:10px 0 2px}
+
+  /* Range */
+  .range-row{gap:8px}
+  .range-val{font-size:.9rem;min-width:24px}
+
+  /* Pass result */
+  .pass-result{font-size:.82rem;padding:12px 14px;border-radius:12px;word-break:break-all;letter-spacing:.02em}
+
+  /* Text stats */
+  .text-stats{gap:6px}
+  .stat-chip{font-size:.72rem;padding:5px 10px;border-radius:8px}
+
+  /* Color */
+  .color-pick-row{gap:14px}
+  .color-picker{width:52px;height:52px;border-radius:12px}
+  .color-preview{width:52px;height:52px;border-radius:12px}
+  .color-outputs{gap:8px}
+  .color-output{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px}
+  .color-output-val{font-size:.82rem}
+  .copy-color-btn{margin-left:auto;font-size:.85rem;padding:4px 8px}
+
+  /* Unit converter */
+  .unit-row{display:flex;gap:8px;align-items:center}
+  .unit-row .glass-input{flex:1}
+  .unit-row .glass-select{flex:1}
+  .unit-arrow{font-size:1.2rem;padding:4px 0;text-align:center;display:block;color:var(--text3)}
+
+  /* Random picker */
+  .random-result{font-size:1.1rem;font-weight:800;padding:10px 0 2px}
+
+  /* --- CONTACT --- */
+  .contact-container{padding:0}
+  .contact-links{gap:10px;display:flex;flex-direction:column}
+  .contact-card{padding:14px 16px;border-radius:16px;gap:12px}
+  .contact-icon-wrap{width:42px;height:42px;border-radius:10px}
+  .contact-platform{font-size:.72rem}
+  .contact-handle{font-size:.95rem;font-weight:700}
+  .contact-form{padding:18px 16px;border-radius:18px}
+  .contact-form .card-title{font-size:1rem;margin-bottom:14px}
+
+  /* --- FOOTER --- */
+  .footer{padding:12px 16px}
+  .footer-inner{flex-direction:column;gap:8px;align-items:center;text-align:center}
+  .footer-bottom{justify-content:center}
+  .footer-links{gap:6px}
+
+  /* --- GLASS CARD --- */
+  .glass-card{border-radius:18px}
+
+  /* --- MAIN PADDING --- */
+  .main{padding-top:56px;padding-bottom:76px}
+  .container{padding:0 14px}
+}
+
+@media(max-width:480px){
+  /* Currency 2 col stays, regions 2 col */
+  .currency-grid{grid-template-columns:1fr 1fr}
+  .regions-grid{grid-template-columns:1fr 1fr}
+  .prayer-grid{grid-template-columns:1fr 1fr}
+
+  /* Weather tighter */
+  .w-temp{font-size:3rem}
+  .w-city{font-size:1.15rem}
+
+  /* Forecast scroll */
+  .forecast-card{min-width:64px;padding:10px 6px}
+
+  /* Pomodoro smaller */
+  .pomodoro-ring-wrap{width:140px;height:140px}
+  .pom-time{font-size:2rem}
+
+  /* Section title */
+  .section-title{font-size:1.4rem}
+
+  /* Tool card */
+  .tool-card{padding:16px 14px}
+
+  /* Glass card */
+  .glass-card{padding:14px}
+
+  /* Lang modal */
+  .lang-modal-card{width:92%;padding:28px 16px;min-width:unset}
+}
+
+@media(max-width:360px){
+  .currency-grid,.regions-grid{grid-template-columns:1fr 1fr}
+  .prayer-grid{grid-template-columns:1fr 1fr}
+  .forecast-card{min-width:58px}
+  .w-temp{font-size:2.6rem}
+  .container{padding:0 10px}
+}
+
+/* ===== CONTACT & FOOTER MOBILE PRO ===== */
+@media(max-width:768px){
+  .contact-socials{gap:8px;margin-bottom:16px}
+  .contact-social-pill{padding:12px 14px;border-radius:14px;gap:12px}
+  .csp-icon{width:36px;height:36px;border-radius:10px}
+  .csp-platform{font-size:.65rem}
+  .csp-handle{font-size:.88rem}
+  .contact-form-wrap{padding:18px 16px;border-radius:18px}
+  .contact-form-header{gap:10px;margin-bottom:2px}
+  .contact-form-icon{width:38px;height:38px;border-radius:10px}
+  .contact-form-title{font-size:.95rem}
+  .contact-form-sub{font-size:.72rem}
+
+  .footer-tagline{font-size:.75rem}
+  .footer-author,.footer-copy,.footer-dot{font-size:.72rem}
+  .footer-social-link{font-size:.72rem;padding:4px 8px}
+  .footer-links{gap:6px}
+  .footer-divider{margin:8px auto}
 }

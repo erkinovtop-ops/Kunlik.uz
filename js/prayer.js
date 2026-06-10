@@ -1,4 +1,4 @@
-/* KUNLIK.UZ — prayer.js */
+/* BUGUN.UZ — prayer.js */
 const PCITIES=[
   {id:'urgench',latn:'Urganch',kril:'Урганч',lat:41.55,lon:60.63},
   {id:'tashkent',latn:'Toshkent',kril:'Тошкент',lat:41.2995,lon:69.2401},
@@ -113,10 +113,19 @@ function renderPrayer(timings){
   const now=new Date();
   let nextKey=null,nextTime=null;
   for(const k of PORDER){
+    if(!timings[k])continue;
     const t=parseT(timings[k]);
     if(t>now){nextKey=k;nextTime=t;break;}
   }
-  if(!nextKey){nextKey=PORDER[0];nextTime=parseT(timings[PORDER[0]]);nextTime.setDate(nextTime.getDate()+1);}
+  if(!nextKey){
+    // all prayers passed today — next is Fajr tomorrow
+    const firstKey=PORDER.find(k=>timings[k]);
+    if(firstKey){
+      nextKey=firstKey;
+      nextTime=parseT(timings[firstKey]);
+      nextTime.setDate(nextTime.getDate()+1);
+    }
+  }
 
   let html='';
   PORDER.forEach(k=>{

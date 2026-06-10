@@ -1,4 +1,4 @@
-/* KUNLIK.UZ — weather.js  (Open-Meteo, no API key) */
+/* BUGUN.UZ — weather.js  (Open-Meteo, no API key) */
 
 const CITIES=[
   {id:'urgench',   latn:'Urganch',   kril:'Урганч',   lat:41.55,  lon:60.63},
